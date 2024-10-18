@@ -8,15 +8,21 @@ class Game:
 
     def ask_row(self) -> int:
         # demander au joueur de choisir une rangée
-        row: str = input("Choisissez une rangée : ")
-        # on enlève 1 à l'input pour que ça corresponde à l'index visuellement
-        return int(row) - 1
+        row: str = input(f"Choisissez une rangée (entre 1 et {self.game_grid.rows}) : ")
+        # vérifier si l'entrée est un nombre
+        while not row.isdigit() or not (1 <= int(row) <= self.game_grid.rows):
+            print(f"Merci de choisir un nombre entre 1 et {self.game_grid.rows}.")
+            row = input(f"Choisissez une rangée (entre 1 et {self.game_grid.rows}) : ")
+        return int(row) - 1  # On soustrait 1 pour correspondre à l'index1
 
     def ask_column(self) -> int:
         # demander au joueur de choisir une colonne
-        column: str = input("Choisissez une colonne : ")
-        # on enlève 1 à l'input pour que ça corresponde à l'index visuellement
-        return int(column) - 1
+        column: str = input(f"Choisissez une colonne (entre 1 et {self.game_grid.columns}) : ")
+        # vérifier si l'entrée est un nombre
+        while not column.isdigit() or not (1 <= int(column) <= self.game_grid.columns):
+            print(f"Merci de choisir un nombre entre 1 et {self.game_grid.columns}.")
+            column = input(f"Choisissez une rangée (entre 1 et {self.game_grid.columns}) : ")
+        return int(column) - 1  # On soustrait 1 pour correspondre à l'index1
 
     def game_won(self) -> bool:
         # S'il ne reste aucune case cahée qui ne soit pas une bombe, c'est gagné

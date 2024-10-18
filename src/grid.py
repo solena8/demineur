@@ -48,6 +48,8 @@ class Grid:
                     # On met à jour le contenu de la cellule avec le nombre de bombes autour
                     cell.hint = bombs_around
             self.recursive_reveal(row, col)
+        else:
+            print("vous avez déja révélé cette case, choisissez-en une autre !")
         return False
 
     def recursive_reveal(self, row: int, col: int):
