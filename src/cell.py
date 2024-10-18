@@ -15,9 +15,9 @@ class Cell:
                 return self.BOMB_VISUAL
             else:
                 if self.hint > 0:
-                    return str(self.hint)
+                    return str(self.hint)+" "
                 else:
-                    return "*"
+                    return "* "
 
     def reveal(self):
         """Révéler la cellule."""
