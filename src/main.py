@@ -1,8 +1,6 @@
 from game import Game
 
-
-
-# game_1 = Game(rows, columns, bombs)
+# instanciation de Game
 game_1 = Game(10, 10, 8)
 
 # Révélation d'une cellule

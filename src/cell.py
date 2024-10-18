@@ -1,6 +1,3 @@
-from errno import ELOOP
-
-
 class Cell:
     BOMB_VISUAL = "💣"
 
@@ -25,8 +22,3 @@ class Cell:
     def reveal(self):
         """Révéler la cellule."""
         self.hidden = False
-
-
-
-
-

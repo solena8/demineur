@@ -1,11 +1,12 @@
 import random
 from cell import Cell
 
+
 class Grid:
     def __init__(self, rows: int, columns: int, bombs: int):
         self.rows: int = rows
         self.columns: int = columns
-        self.bombs : int = bombs
+        self.bombs: int = bombs
         self.grid: list[list[Cell]] = self.generate_grid()
 
     def generate_grid(self) -> list[list[Cell]]:
@@ -33,14 +34,13 @@ class Grid:
                         bombs_count += 1
         return bombs_count
 
-
     def is_it_bomb(self, row: int, col: int) -> bool:
         # Révèle une cellule spécifique.
         cell: Cell = self.grid[row][col]
         if cell.hidden:
             cell.reveal()  # Marquer la cellule comme révélée
             if cell.bomb:
-               return True
+                return True
             else:
                 # Si c'est une cellule sans bombe, mettre à jour avec le nombre de bombes autour
                 bombs_around = self.count_bombs_around(row, col)
@@ -66,12 +66,8 @@ class Grid:
                         if cell.hint == 0:
                             self.recursive_reveal(r, c)
 
-
-
     def print_grid(self):
         # Affiche la grille avec les cases cachées/révélées.
         for row in self.grid:
             display_row = [cell.display() for cell in row]
             print(" ".join(display_row))
-
-
