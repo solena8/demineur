@@ -1,6 +1,6 @@
 # Minesweeper Game
 
-![Minesweeper Screenshot](/home/solena/Ada/Exercices/Individuels/Demineur/demineur.png)
+![Minesweeper Game](demineur.png)
 
 This project is an implementation of the classic Minesweeper game in Python. It was developed as a school project for Ada Tech School.
 
