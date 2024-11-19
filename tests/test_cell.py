@@ -1,5 +1,6 @@
 from cell import Cell
 
+
 def test_init_cell():
     cell = Cell()
     assert cell.hidden == True

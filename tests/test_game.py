@@ -1,5 +1,4 @@
 from grid import Grid
-from cell import Cell
 from unittest.mock import patch
 from game import Game
 
